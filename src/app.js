@@ -25,8 +25,10 @@ app.get("/", (req, res) => {
 
 app.use("/empresas", models);
 
+let port = process.env.PORT || 3001;
+
 conn.sync({ force: false }).then(() => {
-  app.listen(3001, () => {
-    console.log("listen in port", 3001);
+  app.listen(port, () => {
+    console.log("listen in port", port);
   });
 });
